@@ -191,7 +191,7 @@
                                 <div class="row">
                                   <div class="col">
                                     <div class="form-group">
-                                      <label>Location</label><small [hidden]="isAdmin">(read only)</small>
+                                      <label>Location</label><small [hidden]="isAdmin"> (read only)</small>
                                       <select name="location" required [(ngModel)]="user.location" class="form-control">
                                           <option [hidden]="!isAdmin" value="Tallinn">Tallinn</option>
                                           <option [hidden]="!isAdmin" value="Tartu">Tartu</option>
@@ -212,7 +212,7 @@
                                 <div class="row">
                                   <div class="col mb-3">
                                     <div class="form-group">
-                                      <label>Role</label><small [hidden]="isAdmin">(read only)</small>
+                                      <label>Role</label><small [hidden]="isAdmin"> (read only)</small>
                                       <select name="role" required [(ngModel)]="user.role" class="form-control">
                                           <option [hidden]="!isAdmin" value="ROLE_INTERN">INTERN</option>
                                           <option [hidden]="!isAdmin" value="ROLE_EMPLOYEE">EMPLOYEE</option>
@@ -484,10 +484,10 @@ role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               [(ngModel)]="editUser.username" class="form-control">
           </div>
           <div class="form-group">
-            <label for="location">Location</label>
+            <label for="location">Location</label><small [hidden]="isAdmin"> (read only)</small>
             <select name="location" required [(ngModel)]="editUser.location" class="form-control">
-              <option value="Tallinn">Tallinn</option>
-              <option value="Tartu">Tartu</option>
+              <option [hidden]="!isAdmin" value="Tallinn">Tallinn</option>
+              <option [hidden]="!isAdmin" value="Tartu">Tartu</option>
             </select>
           </div>
           <div class="form-group">
@@ -496,13 +496,13 @@ role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
               class="form-control">
           </div>
           <div class="form-group">
-            <label for="authority">Role</label>
+            <label for="authority">Role</label><small [hidden]="isAdmin"> (read only)</small>
               <select name="role" required [(ngModel)]="editUser.role" class="form-control">
-                <option value="ROLE_USER">USER</option>
-                <option value="ROLE_HR">HR</option>
-                <option value="ROLE_MANAGER">MANAGER</option>
-                <option value="ROLE_ADMIN">ADMIN</option>
-                <option value="ROLE_OWNER">OWNER</option>
+                <option [hidden]="!isAdmin" value="ROLE_USER">USER</option>
+                <option [hidden]="!isAdmin" value="ROLE_HR">HR</option>
+                <option [hidden]="!isAdmin" value="ROLE_MANAGER">MANAGER</option>
+                <option [hidden]="!isAdmin" value="ROLE_ADMIN">ADMIN</option>
+                <option [hidden]="!isAdmin" value="ROLE_OWNER">OWNER</option>
               </select>
           </div>
           <div class="input-group mb-2">
